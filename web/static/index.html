@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Holographic Neural Network</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800">Enhanced Holographic Neural Network</h1>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Chat Section -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4">Chat Interface</h2>
+                <div id="chat-messages" class="h-96 overflow-y-auto mb-4 p-4 border rounded-lg">
+                    <!-- Messages will be inserted here -->
+                </div>
+                <div class="flex gap-2">
+                    <input type="text" id="chat-input" 
+                           class="flex-1 p-2 border rounded-lg"
+                           placeholder="Type your message...">
+                    <button onclick="sendMessage()" 
+                            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+                        Send
+                    </button>
+                </div>
+            </div>
+
+            <!-- Learning Section -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-semibold mb-4">Knowledge Management</h2>
+                
+                <!-- File Upload -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium mb-2">Upload Documents</h3>
+                    <input type="file" id="file-upload" class="hidden" 
+                           accept=".txt,.pdf" onchange="handleFileUpload()">
+                    <label for="file-upload" 
+                           class="block w-full p-2 text-center border-2 border-dashed rounded-lg cursor-pointer hover:bg-gray-50">
+                        Click to upload files
+                    </label>
+                </div>
+
+                <!-- Learning Interface -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-medium mb-2">Direct Learning</h3>
+                    <textarea id="learn-input" 
+                              class="w-full p-2 border rounded-lg mb-2" 
+                              placeholder="Input text..."></textarea>
+                    <textarea id="learn-response" 
+                              class="w-full p-2 border rounded-lg mb-2" 
+                              placeholder="Expected response..."></textarea>
+                    <button onclick="submitLearning()" 
+                            class="w-full bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">
+                        Submit Learning
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/main.js"></script>
+</body>
+</html>
